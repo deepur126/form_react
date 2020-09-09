@@ -9,16 +9,16 @@ class RegisterCustomer extends React.Component {
         this.mysubmithandler = this.mysubmithandler.bind(this);
     }
     mysubmithandler = (event) => {
-        if (!event.target.customerid) {
+        if (!event.target.customerid.value) {
             alert("Please Enter Customer Id");
         }
-        if (!Number(event.target.customerid)) {
+        if (!Number(event.target.customerid.value)) {
             alert("Customer Id must be a number");
         }
-        if (!event.target.customername) {
+        if (!event.target.customername.value) {
             alert("Please Enter Customer Name");
         }
-        if (!event.target.country) {
+        if (!event.target.country.value) {
             alert("Please Enter Country");
         }
         alert(this.state.customerid + " " + this.state.customername + " " + this.state.country);
@@ -40,7 +40,7 @@ class RegisterCustomer extends React.Component {
                         <tr><input name="customername" type="text" onChange={this.mychangehandler}></input></tr>
                         <br></br><tr>Enter Country:</tr>
                         <tr><select name="country" id="country" size="1" onChange={this.mychangehandler}>
-                            <option value="select country">Select Country</option>
+                            <option value="">Select Country</option>
                             <option value="India">India</option>
                             <option value="USA">USA</option>
                         </select></tr>
